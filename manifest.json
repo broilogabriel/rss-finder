@@ -1,0 +1,21 @@
+{
+  "name": "RSS Finder",
+  "description": "Find RSS Links in page",
+  "version": "0.0.1",
+  "offline_enabled": true,
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts" : [{
+    "matches" : ["*://*/*"],
+    "js" : ["content.js"],
+    "run_at": "document_end"
+  }],
+  "browser_action": {
+    "default_title": "Find RSS links"
+  },
+  "manifest_version": 2
+}
